@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package movies;
+
+option go_package = "github.com/farismfirdaus/stockbit-technical-test/microservices/pb/movies";
+
+service Movies {
+  rpc Find (Request) returns (Response) {}
+  rpc FindByImdbID (Request) returns (ResponseImdbID) {}
+}
+
+message Request {
+  string pagination = 1;
+  string keywords = 2;
+  string imdbID = 3;
+}
+
+message Response {
+  string response = 1;
+  string error = 2;
+  string totalResult = 3;
+  repeated Search searh = 4;
+}
+
+message Search {
+  string title = 1;
+  string year = 2;
+  string imdbID = 3;
+  string type = 4;
+  string poster = 5;
+}
+
+message ResponseImdbID {
+  string response = 1;
+  string error = 2;
+  string actors = 3; 
+  string Awards = 4; 
+  string BoxOffice = 5; 
+  string Country = 6; 
+  string Director = 7; 
+  string DVD = 8; 
+  string Genre = 9; 
+  string imdbID = 10; 
+  string imdbRating = 11; 
+  string imdbVotes = 12; 
+  string Language = 13; 
+  string Metascore = 14; 
+  string Plot = 15; 
+  string Poster = 16; 
+  string Production = 17; 
+  string Rated = 18; 
+  repeated Ratings Ratings = 19;
+  string Released = 20; 
+  string Runtime = 22; 
+  string Title = 23; 
+  string Type = 24; 
+  string Website = 25; 
+  string Writer = 26; 
+  string Year = 27; 
+}
+
+message Ratings {
+  string source = 1;
+  string Value = 2;
+}

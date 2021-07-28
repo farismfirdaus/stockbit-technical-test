@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package logging;
+
+option go_package = "github.com/farismfirdaus/stockbit-technical-test/microservices/pb/logging";
+
+service Logging {
+  rpc Log (Request) returns (Response) {}
+}
+
+message Request {
+  string method = 1;
+  string request = 2;
+  string response = 3;
+}
+
+message Response {
+  string error = 1;
+}

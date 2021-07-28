@@ -1,0 +1,5 @@
+{
+  "database": {
+    "url": "postgres://postgres:postgres@localhost:5432/logging?sslmode=disable"
+  }
+}
